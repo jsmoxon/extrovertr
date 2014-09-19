@@ -14,7 +14,8 @@ def send_reminder(user_email, contact_email, contact_name):
 
 
 class send_email_task(PeriodicTask):
-    run_every = datetime.timedelta(seconds=60)
+    run_every = crontab(minute=0, hour=7)
+    #datetime.timedelta(seconds=60)
 
     def run(self, **kwargs):
 		todays_contacts = Contact.objects.filter(email_next=datetime.date.today())
