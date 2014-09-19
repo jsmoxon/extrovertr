@@ -11,7 +11,7 @@ class Contact(models.Model):
 	name = models.CharField(max_length=1000, null=True, blank=True)
 	email = models.EmailField(null=True, blank=True)
 	cadence = models.IntegerField(null=True, blank=True)
-	next_email_date = models.DateTimeField(null=True, blank=True)
+	email_next = models.DateField(null=True, blank=True)
 
 	def __unicode__(self):
 		return self.name

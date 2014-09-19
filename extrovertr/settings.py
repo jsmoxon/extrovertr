@@ -77,8 +77,10 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 #limits broker to free usage tier
-BROKER_POOL_LIMIT = 3
+BROKER_POOL_LIMIT = 1
 BROKER_URL = "amqp://kmbkdeid:UNlSBjaPG1dLYuQWkZtyxas5cFxNi8ag@lemur.cloudamqp.com/kmbkdeid"
+
+from extrovertr.constants import *
 
 
 def heroku_settings():
