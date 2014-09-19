@@ -1,0 +1,1 @@
+web: gunicorn extrovertr.wsgi --log-file -
