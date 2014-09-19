@@ -76,6 +76,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+#limits broker to free usage tier
+BROKER_POOL_LIMIT = 3
+BROKER_URL = "amqp://kmbkdeid:UNlSBjaPG1dLYuQWkZtyxas5cFxNi8ag@lemur.cloudamqp.com/kmbkdeid"
+
+
 def heroku_settings():
 
 # Parse database configuration from $DATABASE_URL
