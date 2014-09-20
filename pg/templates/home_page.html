@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block page %}
+<form method="post" action="/">
+{% csrf_token %}
+
+{{form}}
+
+<input type="submit" class="btn btn-primary" value="login" />
+<input type="hidden" name="next" value="/app/contacts/" />
+</form>
+{% endblock %}

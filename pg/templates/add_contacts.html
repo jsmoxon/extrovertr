@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block page %}
+
+    <form action="" method="post" id="">
+      {% csrf_token %}
+	    {{ formset.management_form }}
+      {% for form in formset %}
+      <li>{{form}}</li>
+      {% endfor %}
+      <input type="submit" value="Add Contacts" class="btn btn-success"/>
+  </form>
+
+{% endblock page %}

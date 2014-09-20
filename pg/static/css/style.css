@@ -1,0 +1,46 @@
+#header {
+background:;
+}
+
+#comp_task_table {
+width:1100px;
+margin-bottom:100px;
+}
+
+.table_header {
+font-weight:bold;		      
+}
+
+.light_blue {
+background: #D3E2F2;
+}
+
+.white {
+background: white;
+}
+
+#long_review_row {
+width: 400px;
+}
+
+#main-page {
+min-height:800px;
+}
+
+.right {
+float:right;
+}
+
+.green {
+background:green;	
+}
+
+.red {
+background:red;
+}
+
+.donut-inner{
+margin-top:-125px;
+margin-bottom:125px;
+}
+ 
