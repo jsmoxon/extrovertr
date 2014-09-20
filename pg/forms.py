@@ -3,6 +3,15 @@ from django.forms import ModelForm, Textarea, HiddenInput
 from django import forms
 from django.forms.formsets import formset_factory, BaseFormSet
 
+class RegistrationForm(ModelForm):
+	class Meta:
+		model = User
+		fields = ('username', 'email', 'password')
+		widgets = {
+			'password': forms.PasswordInput()
+		}
+
+
 class BaseContactFormset(BaseFormSet):
 	def save_form(self, user_profile):
 		for form in self.forms:

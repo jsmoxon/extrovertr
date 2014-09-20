@@ -3,6 +3,33 @@ from django.http import HttpResponse
 from models import *
 from forms import *
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth import authenticate, login
+
+
+def create_user_profile(request):
+	if request.method == 'POST':
+		form = RegistrationForm(request.POST)
+		if form.is_valid():
+			user = User.objects.create_user(form.cleaned_data['username'], form.cleaned_data['email'], form.cleaned_data['password'] )
+			user.save()
+			UserProfile.objects.create(user=user)
+			username = form.cleaned_data['username']
+			password = form.cleaned_data['password']
+			authorize_user = authenticate(username=username, password=password)
+			if authorize_user is not None:
+				if authorize_user.is_active:
+					login(request, authorize_user)
+				else:
+					print "not activ"
+			else:
+				print "no user"
+			return redirect('list_contacts')
+		else:
+			return HttpResponse("fail")
+	else:
+		form = RegistrationForm()
+	return render(request, 'create_profile.html', {'form':form})		
+
 
 @login_required()
 def add_contacts(request):

@@ -1,8 +1,8 @@
 {% extends 'base.html' %}
 {% block page %}
-{{contact}}
-{{contact.email}}
-{{contact.email_next}}
-{{contact.cadence}}
+<h3>{{contact}}</h3>
+<h4>{{contact.email}}</h4>
+<h4>Email every: {{contact.cadence}} days</h4>
+<h4>Next reminder: {{contact.email_next}}</h4>
 
 {% endblock page %}
