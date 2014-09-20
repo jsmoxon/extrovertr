@@ -12,11 +12,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 SECRET_KEY = 'i=e=p1trjt1gig338!*-pp4v#olb4!q9vt(4-xg)h=c@t2iy9+'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 TEMPLATE_DEBUG = True
 
-ALLOWED_HOSTS = ['infinite-ravine-9335.herokuapp.com']
+ALLOWED_HOSTS = []
 
 
 # Application definition
