@@ -1,7 +1,3 @@
-import os
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "extrovertr.settings")
-
-
 from django.core.wsgi import get_wsgi_application
 from dj_static import Cling
 
