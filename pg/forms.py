@@ -32,7 +32,8 @@ class CreateContactForm(ModelForm):
 		model = Contact
 		fields = ('name', 'email', 'cadence', 'email_next', 'user')
 		widgets = {
-			'user': HiddenInput()	
+			'user': HiddenInput(),
+			'email_next': forms.TextInput(attrs={'class':'datepicker'})
 		}
 
 CreateContactFormSet = formset_factory(CreateContactForm, formset=BaseContactFormset, extra=3)
