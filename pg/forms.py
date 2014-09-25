@@ -35,5 +35,32 @@ class CreateContactForm(ModelForm):
 			'user': HiddenInput(),
 			'email_next': forms.TextInput(attrs={'class':'datepicker'})
 		}
+		labels = {
+			'email_next': 'When do you want to email next? (leave blank to make it random)'
+		}
 
-CreateContactFormSet = formset_factory(CreateContactForm, formset=BaseContactFormset, extra=3)
+CreateContactFormSet = formset_factory(CreateContactForm, formset=BaseContactFormset, extra=10)
+
+class EditContactForm(ModelForm):
+	class Meta:
+		model = Contact
+		exclude = ('user',)
+	def is_not_blank(self, contact):
+		if self.cleaned_data['name'] == "":
+			self.cleaned_data['name']= contact.name
+		if self.cleaned_data['email'] == "":
+			self.cleaned_data['email']= contact.email
+		if self.cleaned_data['cadence'] == None:
+			self.cleaned_data['cadence']= contact.cadence
+		if self.cleaned_data['email_next'] == None:
+			self.cleaned_data['email_next']= contact.email_next
+
+
+
+
+
+
+
+
+
+

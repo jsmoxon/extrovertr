@@ -51,6 +51,32 @@ def view_contact(request, contact_id):
 	context = {'contact':contact}
 	return render(request, 'view_contact.html', context)
 
+
+@login_required
+def edit_contact(request, contact_id):
+	contact = Contact.objects.get(pk=contact_id)
+	if request.method == 'POST':
+		form = EditContactForm(request.POST)
+		if form.is_valid():
+			form.is_not_blank(contact)
+			contact.name = form.cleaned_data['name']
+			contact.email = form.cleaned_data['email']
+			contact.cadence = form.cleaned_data['cadence']
+			contact.email_next = form.cleaned_data['email_next']
+			contact.save()
+			return redirect('list_contacts')
+		else:
+			return HttpResponse("fail")
+	else:
+		form = EditContactForm(initial={
+			'name': contact.name,
+			'email': contact.email,
+			'cadence': contact.cadence,
+			'email_next': contact.email_next,
+			})
+	return render(request, 'edit_contact.html', {'form':form, 'contact':contact})
+
+
 @login_required()
 def list_contacts(request):
 	user_profile = UserProfile.objects.get(user=request.user)

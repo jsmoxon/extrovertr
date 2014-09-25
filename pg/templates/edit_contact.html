@@ -1,9 +1,12 @@
 {% extends 'base.html' %}
 {% block page %}
-<h3>{{contact}}</h3><a href="/app/edit/{{contact.id}}">Edit</a>
+<form method="post" action="">
+<h3>{{contact}}</h3>
 <h4>{{contact.email}}</h4>
 <h4>Email every: {{contact.cadence}} days</h4>
 <h4>Next reminder: {{contact.email_next}}</h4>
-
-
+{% csrf_token %}
+{{form}}
+<input type="submit" class="btn btn-primary" value="edit" />
+</form>
 {% endblock page %}

@@ -34,6 +34,7 @@
 	{% if user.is_authenticated %}
 	<li><a href="/logout/">Logout</a></li>
 	{% else %}
+
 	<li><a href="/accounts/login/">Log In</a></li>
       {% endif %}
 
@@ -45,22 +46,5 @@
 
 {% block page %}
 {% endblock page%}
-</div>
-<div class="navbar navbar-inverse" id="footer">
-  <div class="container">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="/">Measurr</a>
-    </div>
-    <ul class="nav navbar-nav navbar-right">
-      <li><a href="/app/contacts/">Home</a></li>
-      <li><a href="/app/contacts/add/">Add Contact</a></li>
-  {% if user.is_authenticated %}
-  <li><a href="/logout/">Logout</a></li>
-  {% else %}
-  <li><a href="/accounts/login/">Log In</a></li>
-      {% endif %}
-
-    </ul>
-  </div>
 </div>
 </body>

@@ -4,9 +4,27 @@
     <form action="" method="post" id="">
       {% csrf_token %}
 	    {{ formset.management_form }}
+	    <table class="table table-striped">
+		<tr class="contact_table">
+			<th></th>
+			<th>Name</th>
+			<th>Email</th>
+			<th>How many days between <br/>reminders?</th>
+			<th>When should we first remind <br/> you to email this person?</th>
+		</tr>
       {% for form in formset %}
-      <li>{{form}}</li>
+      <tr>
+      	<th>Contact:</th>
+      	<td>{{form.name}}</td>
+      	<td>{{form.email}}</td>
+      	<td>{{form.cadence}}</td>
+      	<td>{{form.email_next}}</td>
+      </tr>
+
       {% endfor %}
+
+	    </table>
+
       <input type="submit" value="Add Contacts" class="btn btn-success"/>
   </form>
 
