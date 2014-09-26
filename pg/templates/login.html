@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% block page %}
+<div class="container">
 <form method="post" action="/">
 {% csrf_token %}
 
@@ -8,6 +9,5 @@
 <input type="submit" class="btn btn-success" value="login" />
 <input type="hidden" name="next" value="/app/contacts/" />
 </form>
-
-
+</div>
 {% endblock page %}

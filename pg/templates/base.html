@@ -23,7 +23,7 @@
     <![endif]-->
   </head>
 <body>
-  <div class="navbar navbar-default" id="header">
+  <div class="navbar navbar-inverse" id="header">
     <div class="container">
       <div class="navbar-header">
 	<a class="navbar-brand" href="/">Extrovertr</a>  
@@ -41,10 +41,17 @@
       </ul>      
     </div>
   </div>
-  
-  <div class="container" id="main-page">
+
 
 {% block page %}
 {% endblock page%}
+<div class="container">
+      <hr>
+      <p>created by Jack Moxon in California</p>
+
+{% block attribution %}
+{% endblock attribution %}
+
 </div>
+
 </body>

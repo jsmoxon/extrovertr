@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block page %}
 <!--<form method="post" action="/">
 {% csrf_token %}
@@ -12,32 +13,36 @@
    <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
       <div class="container">
-        <h1>Hello, world!</h1>
-        <p>Get periodic reminders to reach out to friends, family and people in your network.</p>
+        <h1>Hello, network!</h1>
+        <p>Remember to get coffee with your former boss once a quarter, call your Uncle Bob twice a month, and have your friends that live across town to dinner at least every two months.</p>
         <p><a href="/signup/" class="btn btn-primary btn-lg" role="button">Sign up &raquo;</a></p>
       </div>
     </div>
 
-<!--    <div class="container">
-
+    <div class="container">
       <div class="row">
         <div class="col-md-4">
-          <h2>Heading</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+          <img src="{% get_static_prefix %}img/icon_4060.png" width=150px>
+          <h2>Nudge</h2>
+          <p>Nudge yourself to keep in better touch with your friends, family and professional network. You want to do this, but there are peripheral friends and colleagues that you just need to be reminded to call. </p>
         </div>
         <div class="col-md-4">
-          <h2>Heading</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+        	<img src="{% get_static_prefix %}img/icon_18772.png" width=150px>
+          <h2>Reminders</h2>
+          <p>Extrovertr will send you periodic email reminders to reach out to contacts in your list. Then you can call, text or email them about getting together. </p>
        </div>
         <div class="col-md-4">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+          <img src="{% get_static_prefix %}img/icon_6692.png" width=150px>
+          <h2>Easy</h2>
+          <p>Just enter your contact's name and about how often you'd like to be reminded to ping them. Extrovertr will take it from there.</p>
         </div>
-      </div>-->
-      <hr>
-      <p>created by Jack Moxon in California</p>
+      </div>
 
 {% endblock %}
+{% block attribution %}
+
+      Alarm Clock designed by <a href="http://www.thenounproject.com/madebyquan">Quan Do</a> from the <a href="http://www.thenounproject.com">Noun Project</a>
+
+      Hammock designed by <a href="http://www.thenounproject.com/adamatmullin">Adam  Mullin</a> from the <a href="http://www.thenounproject.com">Noun Project</a>
+
+{% endblock attribution %}

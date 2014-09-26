@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 {% block page %}
+<div class="container">
+
 <form method="post" action="">
 <h3>{{contact}}</h3>
 <h4>{{contact.email}}</h4>
@@ -9,4 +11,5 @@
 {{form}}
 <input type="submit" class="btn btn-primary" value="edit" />
 </form>
+</div>
 {% endblock page %}

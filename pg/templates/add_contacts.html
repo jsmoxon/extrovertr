@@ -1,17 +1,20 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block page %}
 
-    <form action="" method="post" id="">
-      {% csrf_token %}
-	    {{ formset.management_form }}
-	    <table class="table table-striped">
-		<tr class="contact_table">
-			<th></th>
-			<th>Name</th>
-			<th>Email</th>
-			<th>How many days between <br/>reminders?</th>
-			<th>When should we first remind <br/> you to email this person?</th>
-		</tr>
+
+<div class="container">
+    	<form action="" method="post" id="">
+      	  {% csrf_token %}
+	  	  {{ formset.management_form }}
+	    	<table class="table table-striped">
+			<tr class="contact_table">
+				<th></th>
+				<th>Name</th>
+				<th>Email</th>
+				<th>How many days between <br/>reminders?</th>
+				<th>When should we first remind <br/> you to email this person?</th>
+			</tr>
       {% for form in formset %}
       <tr>
       	<th>Contact:</th>
@@ -28,6 +31,7 @@
       <input type="submit" value="Add Contacts" class="btn btn-success"/>
   </form>
 
+</div>
 <script type="text/javascript">
 $(document).ready(function(){
   $('.datepicker').datepicker();

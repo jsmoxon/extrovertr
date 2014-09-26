@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 {% block page %}
+<div class="container">
+
 <form method="post" action="">
 {% csrf_token %}
 
@@ -7,4 +9,5 @@
 
 <input type="submit" class="btn btn-primary" value="Signup" />
 </form>
+</div>
 {% endblock %}

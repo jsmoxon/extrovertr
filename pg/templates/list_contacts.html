@@ -1,11 +1,12 @@
 {% extends 'base.html' %}
 {% block page %}
 
+<div class="container">
 
 <ul>
 {% for contact in contacts %}
 <li><a href="/app/contact/{{contact.id}}">{{contact}}</a></li>
 {% endfor %}
 </ul>
-
+</div>
 {% endblock page %}
