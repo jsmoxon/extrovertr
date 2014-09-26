@@ -48,6 +48,9 @@ def add_contacts(request):
 @login_required()
 def view_contact(request, contact_id):
 	contact = Contact.objects.get(pk=contact_id)
+	user_profile = UserProfile.objects.get(user=request.user)
+	if user_profile.id != contact.user.id:
+		return HttpResponse("not your contact")
 	context = {'contact':contact}
 	return render(request, 'view_contact.html', context)
 
@@ -55,6 +58,9 @@ def view_contact(request, contact_id):
 @login_required
 def edit_contact(request, contact_id):
 	contact = Contact.objects.get(pk=contact_id)
+	user_profile = UserProfile.objects.get(user=request.user)
+	if user_profile.id != contact.user.id:
+		return HttpResponse("not your contact")
 	if request.method == 'POST':
 		form = EditContactForm(request.POST)
 		if form.is_valid():
