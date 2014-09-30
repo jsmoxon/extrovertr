@@ -83,9 +83,7 @@ BROKER_URL = "amqp://kmbkdeid:UNlSBjaPG1dLYuQWkZtyxas5cFxNi8ag@lemur.cloudamqp.c
 from extrovertr.constants import *
 
 
-#def heroku_settings():
-
-# Parse database configuration from $DATABASE_URL
+# Parse database configuration from $DATABASE_URL (comment out to run locally)
 import dj_database_url
 DATABASES['default'] =  dj_database_url.config()
 
@@ -104,7 +102,4 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
     )
-#    return 
 
-#uncomment before deploying
-#heroku_settings()

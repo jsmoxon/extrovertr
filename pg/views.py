@@ -86,6 +86,10 @@ def edit_contact(request, contact_id):
 @login_required()
 def list_contacts(request):
 	user_profile = UserProfile.objects.get(user=request.user)
-	contacts = Contact.objects.filter(user=user_profile)
-	context = {'user_profile':user_profile, 'contacts':contacts}
+	contacts = Contact.objects.filter(user=user_profile).order_by('name')
+	upcoming_contacts = Contact.objects.filter(user=user_profile).order_by('email_next')
+	context = {'user_profile':user_profile, 'contacts':contacts, 'upcoming_contacts':upcoming_contacts}
 	return render(request, 'list_contacts.html', context)
+
+
+

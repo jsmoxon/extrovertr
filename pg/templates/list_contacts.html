@@ -2,11 +2,25 @@
 {% block page %}
 
 <div class="container">
+	<div class="row">
+  		<div class="col-md-6">
+  			<h3>Current Contacts:</h3>
+			<ul>
+				{% for contact in contacts %}
+				<li><a href="/app/contact/745{{contact.id}}">{{contact}}</a></li>
+				{% endfor %}
+			</ul>
+		</div>
+		<div class="col-md-6">
+			<h3>Upcoming Reminders:</h3>
+			{% for contact in upcoming_contacts|slice:"10" %}
+				<li>{{contact}} -- {{contact.email_next}}</li>
+			{% endfor %}
+		</div>
+	</div>
 
-<ul>
-{% for contact in contacts %}
-<li><a href="/app/contact/745{{contact.id}}">{{contact}}</a></li>
-{% endfor %}
-</ul>
+
 </div>
+
+
 {% endblock page %}
