@@ -3,10 +3,8 @@ div#ui-datepicker-div    {
     display:block;     
  }
 
-
-
-#long_review_row {
-width: 400px;
+#contact_list a, #upcoming_list a{
+	font-size: 18px;
 }
 
 #main-page {

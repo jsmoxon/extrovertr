@@ -3,18 +3,19 @@
 
 <div class="container">
 	<div class="row">
-  		<div class="col-md-6">
+  		<div class="col-md-6" id="contact_list">
   			<h3>Current Contacts:</h3>
 			<ul>
 				{% for contact in contacts %}
-				<li><a href="/app/contact/745{{contact.id}}">{{contact}}</a></li>
+				<li><a href="/app/contact/745{{contact.id}}">{{contact}}</a> ({{contact.cadence}} days)</li>
 				{% endfor %}
 			</ul>
 		</div>
-		<div class="col-md-6">
+		<div class="col-md-6" id="upcoming_list">
 			<h3>Upcoming Reminders:</h3>
 			{% for contact in upcoming_contacts|slice:"10" %}
-				<li>{{contact}} -- {{contact.email_next}}</li>
+				<li><a href="/app/contact/745{{contact.id}}">{{contact}}</a> on {{contact.email_next}}</li>
+
 			{% endfor %}
 		</div>
 	</div>
