@@ -12,7 +12,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 SECRET_KEY = 'i=e=p1trjt1gig338!*-pp4v#olb4!q9vt(4-xg)h=c@t2iy9+'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 TEMPLATE_DEBUG = True
 
@@ -84,8 +84,8 @@ from extrovertr.constants import *
 
 
 # Parse database configuration from $DATABASE_URL (comment out to run locally)
-import dj_database_url
-DATABASES['default'] =  dj_database_url.config()
+#import dj_database_url
+#DATABASES['default'] =  dj_database_url.config()
 
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')

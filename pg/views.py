@@ -5,7 +5,6 @@ from forms import *
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login
 
-
 def create_user_profile(request):
 	if request.method == 'POST':
 		form = RegistrationForm(request.POST)
@@ -90,6 +89,8 @@ def list_contacts(request):
 	upcoming_contacts = Contact.objects.filter(user=user_profile).order_by('email_next')
 	context = {'user_profile':user_profile, 'contacts':contacts, 'upcoming_contacts':upcoming_contacts}
 	return render(request, 'list_contacts.html', context)
+
+
 
 
 
